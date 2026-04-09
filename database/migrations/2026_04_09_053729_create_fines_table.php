@@ -19,8 +19,8 @@ return new class extends Migration
                   ->constrained('loans')
                   ->onDelete('cascade');
 
-            $table->decimal('amount', 8, 2); // Requerido
-            $table->string('reason', 255);   // Requerido
+            $table->decimal('amount', 8, 2); 
+            $table->string('reason', 255);   
             $table->enum('status', ['pending', 'paid'])->default('pending');
             $table->date('paid_at')->nullable();
 
@@ -29,7 +29,7 @@ return new class extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Reverse the migrations
      */
     public function down(): void
     {

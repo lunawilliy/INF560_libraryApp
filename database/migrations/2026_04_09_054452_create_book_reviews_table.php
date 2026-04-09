@@ -12,18 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('book_reviews', function (Blueprint $table) {
-            $table->bigIncrements('id'); // PK
+            $table->bigIncrements('id'); 
 
-            // FKs con CASCADE on delete
+            
             $table->foreignId('book_id')->constrained('books')->onDelete('cascade');
             $table->foreignId('member_id')->constrained('members')->onDelete('cascade');
 
-            $table->unsignedTinyInteger('rating'); // Requerido (1-5)
+            $table->unsignedTinyInteger('rating'); 
             $table->text('comment')->nullable();
 
-            $table->timestamps(); // Auto (created_at y updated_at)
+            $table->timestamps(); 
 
-            // Restricción única: Un miembro solo puede dejar una reseña por libro
+            
             $table->unique(['book_id', 'member_id']);
         });
     }

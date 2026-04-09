@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('book_id')->constrained()->onDelete('cascade');
             $table->string('role', 50)->default('Autor');
             $table->timestamps();
-            $table->unique(['author_id', 'book_id']); // Restricción para evitar duplicados
+            $table->unique(['author_id', 'book_id']); 
         });
     }
 
