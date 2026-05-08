@@ -9,13 +9,7 @@ class Author extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'first_name',
-        'last_name',
-        'nationality',
-        'birth_date',
-        'biography',
-    ];
+   protected $fillable = ['first_name', 'last_name', 'bio'];
 
     protected $casts = [
         'birth_date' => 'date',
